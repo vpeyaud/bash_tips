@@ -1,0 +1,14 @@
+Modify a serie of files in a loop
+
+# Change file names (ex. "test_1_cg.vtu" to "test_1_cc.vtu")
+
+for fi in ls *vtu
+    do echo $fi ${fi/cg/cc}
+       cp -v $fi ${fi/cg/cc}
+done
+
+# Change occurence in  every files (ex. "cg" to "cc")
+
+for fi in ls *pvtu
+    do cat fi | sed -e 's/cg/cc/g' > ${fi/cg/cc}
+done
