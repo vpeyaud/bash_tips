@@ -24,3 +24,4 @@ bit="${bit%%__*}"    # Remove after  last  __   -> ./dir/r
 echo "[$1] [${bit}]" # Show effect.
 
 echo ${bit##*/}                                 -> r__tn__g__z
+echo ${bit#\./} ???                             -> dir/r__tn__g__z
