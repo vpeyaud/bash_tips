@@ -12,3 +12,15 @@ done
 for fi in ls *pvtu
     do cat fi | sed -e 's/cg/cc/g' > ${fi/cg/cc}
 done
+
+
+
+#!/usr/bin/env bash
+bit="$1"             # Get the argument.        ex. : ./dir/r__tn__g__z
+bit="${bit#*__}"    # Remove before first __   -> tn__g 
+bit="${bit##*__}"    # Remove before last  __   -> g 
+bit="${bit%__*}"     # Remove after  first __   -> ./dir/r__tn 
+bit="${bit%%__*}"    # Remove after  last  __   -> ./dir/r 
+echo "[$1] [${bit}]" # Show effect.
+
+echo ${bit##*/}                                 -> r__tn__g__z
