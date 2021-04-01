@@ -1,0 +1,11 @@
+- Clone an existing project
+git clone git@gricad-gitlab.univ-grenoble-alpes.fr:elmerscriptshare/elmer.git
+- Or create one
+git init
+git add file1.txt file2.txt # Add one or several files   
+git add --all Obs/          # Add a directory and all the content (=recursively)
+sea;git ls-files            # Show information about files in the index and the working tree
+git ls-files -m             # List modifications in the working tree
+for fi in `git ls-files -m`; do ls $fi ; git add $fi ; done # Loop : list modifications and add them to the working tree
+git commit                  # Record changes to the repository
+git push                    # Update remote refs 
